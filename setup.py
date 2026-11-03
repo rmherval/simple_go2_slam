@@ -26,6 +26,8 @@ setup(
         'console_scripts': [
             'odom_to_tf = simple_go2_slam.odom_to_tf:main',
             'cloud_relay = simple_go2_slam.cloud_relay:main',
+            'odom_relay = simple_go2_slam.odom_relay:main',
+            'imu_relay = simple_go2_slam.imu_relay:main',
             'robot_marker = simple_go2_slam.robot_marker:main',
         ],
     },

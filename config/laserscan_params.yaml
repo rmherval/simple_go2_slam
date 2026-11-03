@@ -2,16 +2,16 @@ pointcloud_to_laserscan:
   ros__parameters:
     target_frame: base_link
     transform_tolerance: 0.1
-    # El lidar está aproximadamente a la altura de base_link; conservar
-    # una banda alrededor de su plano después de transformar la nube.
-    min_height: -0.15
-    max_height: 0.15
-    # Recorte a 180º frontales exactos (ignora cuerpo y patas del robot)
+    # La nube llega en odom y el lidar está por encima del plano z=0 de
+    # base_link; conservar su banda vertical después de transformar la nube.
+    min_height: 0.15
+    max_height: 0.80
+    # Recorte a 180º frontales para excluir el cuerpo y las patas del robot.
     angle_min: -1.5708
     angle_max: 1.5708
     angle_increment: 0.0174533
     scan_time: 0.1
     range_min: 0.45
-    range_max: 4.0
+    range_max: 8.0
     use_inf: true
     inf_epsilon: 1.0
